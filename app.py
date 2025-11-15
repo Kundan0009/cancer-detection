@@ -11,16 +11,22 @@ Interactive web application for:
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import time
 import io
 
 # Import our modules
-from data_preprocessing import DataPreprocessor, generate_synthetic_dataset
-from optimization import HybridGAPSO
-from transformer_model import GeneTransformerClassifier
-from evaluation import ModelEvaluator
-from interpretability import GeneImportanceAnalyzer
+try:
+    from data_preprocessing import DataPreprocessor, generate_synthetic_dataset
+    from optimization import HybridGAPSO
+    from transformer_model import GeneTransformerClassifier
+    from evaluation import ModelEvaluator
+    from interpretability import GeneImportanceAnalyzer
+except ImportError as e:
+    st.error(f"Import error: {e}")
+    st.stop()
 
 # Page configuration
 st.set_page_config(
