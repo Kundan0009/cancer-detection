@@ -1,0 +1,7 @@
+After creating your GitHub repository, run these commands:
+
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/cancer-classification-ga-pso-transformer.git
+git push -u origin main
+
+Replace YOUR_USERNAME with your actual GitHub username.
